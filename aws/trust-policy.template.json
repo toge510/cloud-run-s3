@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowGoogleServiceAccountToAssumeThisRole",
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "accounts.google.com"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "accounts.google.com:oaud": "${AUDIENCE}",
+          "accounts.google.com:sub": "${SA_UNIQUE_ID}"
+        }
+      }
+    }
+  ]
+}

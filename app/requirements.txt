@@ -1,0 +1,6 @@
+Flask>=3.0
+gunicorn>=22.0
+google-auth>=2.35
+# google-auth の requests transport はオプショナル依存なので明示的に入れる
+requests>=2.32
+boto3>=1.35
